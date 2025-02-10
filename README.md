@@ -1,4 +1,4 @@
-```
+
 # Generic PDF generator for Laravel
 
 ## What is it?
@@ -23,23 +23,23 @@ For a quick install, run this from your project root:
 This is a good way to start. This gives also the optertunity to show the PDF in the browser or html:
 
 ```php
-      $pdf_generate_service = new PdfGenerateService('pdf.invoice-pdf', compact('pdfOutput', 'delivery', 'deliveryLines', 'type'));
+$pdf_generate_service = new PdfGenerateService('pdf.invoice-pdf', compact('pdfOutput', '', '', ''));
 
-      $default_output = 'browser';
-      $output = $_GET['output'] ?? $default_output;
+$default_output = 'browser';
+$output = $_GET['output'] ?? $default_output;
 
-      if (in_array($output, ['download'])) {
+if (in_array($output, ['download'])) {
 
-      } elseif (in_array($output, ['html'])) {
+} elseif (in_array($output, ['html'])) {
 
-          $rendered_output = $pdf_generate_service->returnHtml();
+    $rendered_output = $pdf_generate_service->returnHtml();
 
-      } elseif (in_array($output, ['browser', 'stream', 'online'])) {
+} elseif (in_array($output, ['browser', 'stream', 'online'])) {
 
-          $rendered_output =  $pdf_generate_service->generatePdf()->outputToBrowser();;
-      }
+    $rendered_output =  $pdf_generate_service->generatePdf()->outputToBrowser();;
+}
 
-      return $rendered_output;
+return $rendered_output;
 ```
 
 ## Additional knowledge
