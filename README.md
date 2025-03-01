@@ -42,6 +42,26 @@ if (in_array($output, ['download'])) {
 return $rendered_output;
 ```
 
+### layout
+
+This is the way you can build up your PDF. That the html output will be almost the same as the output in the PDF.
+
+```php
+@extends('pdf.pdf-layout')
+
+@section('style')
+@endsection
+
+@section('header')
+@endsection
+
+@section('content')
+@endsection
+
+@section('footer')
+@endsection
+```
+
 ## Additional knowledge
 
 ## Example
